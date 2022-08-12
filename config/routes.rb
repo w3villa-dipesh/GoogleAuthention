@@ -10,6 +10,8 @@ Rails.application.routes.draw do
   get '/logout' ,to: 'sessions#destroy' # from url box
   post '/logout' ,to: 'sessions#destroy' # from button without method: :delete
   delete '/logout' ,to: 'sessions#destroy' # from button with method: :delete
+  get '/auth/:provider/callback', to: 'sessions#omniauth'
+  
   resources :users
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
